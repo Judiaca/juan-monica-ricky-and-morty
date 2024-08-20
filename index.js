@@ -1,7 +1,5 @@
-const cardContainer = document.querySelector('[data-js="card-container"]');
-const searchBarContainer = document.querySelector(
-  '[data-js="search-bar-container"]'
-);
+import { createCharacterCard } from "./components/card/card";
+
 const searchBar = document.querySelector('[data-js="search-bar"]');
 const navigation = document.querySelector('[data-js="navigation"]');
 const prevButton = document.querySelector('[data-js="button-prev"]');
