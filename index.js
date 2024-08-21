@@ -2,7 +2,7 @@ import { createCharacterCard } from "./components/card/card.js";
 
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBar = document.querySelector('[data-js="search-bar"]');
-const navigation = document.querySelector('[data-js="navigation"]');
+//const navigation = document.querySelector('[data-js="navigation"]');
 const prevButton = document.querySelector('[data-js="button-prev"]');
 const nextButton = document.querySelector('[data-js="button-next"]');
 const pagination = document.querySelector('[data-js="pagination"]');
@@ -16,7 +16,7 @@ let searchQuery = "";
 async function fetchCharacters(page = 1, query = "") {
   try {
     const response = await fetch(
-      `https://rickandmortyapi.com/api/character/?page${page}&name=${query}`
+      `https://rickandmortyapi.com/api/character/?page=${page}&name=${query}`
     );
     const data = await response.json();
 
