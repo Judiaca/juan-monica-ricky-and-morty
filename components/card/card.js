@@ -1,4 +1,14 @@
-// card.js
+/**
+ * Creates a character card element with the provided character data.
+ *
+ * @param {Object} character - The character data.
+ * @param {string} character.image - The URL of the character's image.
+ * @param {string} character.name - The name of the character.
+ * @param {string} character.status - The status of the character.
+ * @param {string} character.type - The type of the character.
+ * @param {number} character.occurrences - The number of episodes the character appeared in.
+ * @returns {HTMLElement} - The created card element.
+ */
 export function createCharacterCard({
   image,
   name,

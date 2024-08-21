@@ -16,12 +16,13 @@ let searchQuery = "";
 async function fetchCharacters(page = 1, query = "") {
   try {
     const response = await fetch(
-      `https://rickandmortyapi.com/api/character/?page=${page}&name=${query}`
+      `https://rickandmortyapi.com/api/character/?page${page}&name=${query}`
     );
     const data = await response.json();
 
     maxPage = data.info.pages;
     pagination.textContent = `${page} / ${maxPage}`;
+
     // Clear the card container before appending new cards
     cardContainer.innerHTML = "";
 
