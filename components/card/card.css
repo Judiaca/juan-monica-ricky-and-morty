@@ -1,3 +1,13 @@
+/* Status Dot Styling */
+.status-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px; /* Space between dot and text */
+  vertical-align: middle;
+}
+
 /* Container for the cards */
 .card-container {
   display: grid;
