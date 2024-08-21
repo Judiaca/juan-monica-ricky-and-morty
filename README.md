@@ -37,7 +37,7 @@ npx ghcd@latest spiced-academy/fs-web-exercises/tree/main/sessions/recap-project
 
 ## Tasks
 
-### Character Card Component
+### Character Card Component - DONE- FUNCTION - 
 
 For now you have only one hard coded character card for Rick Sanchez in your HTML. We want to create
 them dynamically in our JavaScript.
@@ -54,7 +54,7 @@ them dynamically in our JavaScript.
 - Think about which input parameters this function will need.
 - The function finally returns the created `li` HTML element.
 
-### Fetch the Data
+### Fetch the Data - DONE -
 
 Now we can fetch the character data from the API and generate our cards with it.
 
@@ -68,7 +68,7 @@ Now we can fetch the character data from the API and generate our cards with it.
   use `innerHTML = ''` for that).
 - Call the function inside the `index.js`. Now you should see 20 cards in your app.
 
-### Pagination
+### Pagination - PREVIEW - NEXT INTEGRATION DONE
 
 Great Job! But we want to see not only 20 characters, we want all of them! So lets implement the
 pagination.
@@ -84,7 +84,7 @@ pagination.
 - Update the pagination display each time characters are fetched to show the current page index and
   the current max page index.
 
-### The Search Bar
+### The Search Bar - DONE -
 
 Now we want even more functionality in our app. We want to find individual characters by typing
 their name into the search bar.

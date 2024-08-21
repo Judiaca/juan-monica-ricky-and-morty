@@ -41,7 +41,7 @@ async function fetchCharacters(page = 1, query = "") {
   }
 }
 
-// Event listeners for pagination buttons
+// Event listeners for pagination buttons - Prev. & next button - DONE!
 prevButton.addEventListener("click", () => {
   if (page > 1) {
     page--;
@@ -64,5 +64,7 @@ searchBar.addEventListener("submit", (event) => {
   fetchCharacters(page, searchQuery);
 });
 
-// Call the function to fetch and display the first 20 characters
+// navigation.addEventListener("submit", (Event));
+
+// Call the function to fetch and display the first 20 characters and more than 20!
 fetchCharacters();
