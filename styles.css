@@ -10,12 +10,13 @@
 }
 
 :root {
-  --color-primary: #033434;
+  --color-primary: #063232;
   --color-secondary: #ffa07a;
   --font-family: system-ui;
 }
 
 body {
+  background-color: #008080;
   font-family: var(--font-family);
   color: var(--color-primary);
   padding: 20px;
@@ -50,7 +51,7 @@ main {
 
 @media (max-width: 480px) {
   body {
-    padding: 5px;
+    padding: 25px;
   }
 
   .title {
