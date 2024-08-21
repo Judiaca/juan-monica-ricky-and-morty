@@ -1,25 +1,104 @@
+/* Container for the cards */
 .card-container {
-  margin-bottom: 10px;
-}
-.card {
-  width: 300px;
-  background-color: var(--color-secondary);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards in a row */
+  gap: 30px; /* Space between cards */
+  padding: 50px;
+  max-width: 1200px; /* Maximum width of the container */
+  margin: 0 auto; /* Center the container horizontally */
 }
 
+/* Card styling */
+.card {
+  background-color: #c4d45c; /* Secondary Green background */
+  border-radius: 10px;
+  overflow: hidden;
+  border: 5px solid #00d084; /* Primary Green border */
+  position: relative;
+  padding: 15px; /* Add padding inside the card */
+}
+
+/* Image container styling */
+.card__image-container {
+  position: relative;
+  padding: 10px; /* Space around the image */
+  box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+  margin: 0 auto; /* Center the image horizontally */
+  display: block;
+  border-radius: 22px; /* Rounded corners for images */
+  box-shadow: none; /* Remove shadow from images */
+}
+
+.card__image-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+}
+
+.card__content {
+  padding: 15px;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 1.5em;
+  font-family: "Press Start 2P", cursive;
+  color: #14b3ca;
+  text-align: left;
+  border-bottom: 2px solid #00d084; /* Separation line between title and content */
+  padding-bottom: 10px; /* Space below the title */
+}
+
+/* Card info styling */
 .card__info {
   display: grid;
   grid-template-columns: auto 1fr;
+  gap: 5px;
 }
-.card__content {
-  padding: 10px 20px 20px;
-  display: grid;
-  gap: 20px;
+
+.card__info-title {
+  font-family: "Press Start 2P";
+  color: #14b3ca; /* Accent Blue color */
 }
 
 .card__info-description {
   text-align: right;
+  font-family: "Press Start 2P";
+  color: #14b3ca; /* Accent Blue color */
 }
 
 li {
   list-style: none;
+}
+
+/* Hover effect for the card */
+.card:hover {
+  background-color: #01191d; /* Switch to the blue theme on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.card__image:hover {
+  transform: scale(1.1); /* Zoom out effect for the image on hover */
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* Show 2 cards per row on tablets */
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    grid-template-columns: 1fr; /* Show 1 card per row on mobile phones */
+    gap: 10px;
+  }
 }

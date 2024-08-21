@@ -15,18 +15,45 @@
   --font-family: system-ui;
 }
 
+/* Set the background color of the entire page to black */
+/* General styles */
 body {
-  font-family: var(--font-family);
-  color: var(--color-primary);
-  padding: 20px;
-}
-
-main {
+  background-color: black;
+  color: white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center; /* Center all content horizontally */
+  justify-content: center; /* Center all content vertically if needed */
+  min-height: 100vh; /* Ensure body takes at least the full viewport height */
 }
 
-.title {
-  padding: 10px 0;
+/* Title container */
+.title-container {
+  margin: 20px 0; /* Space above and below the title image */
+  display: flex;
+  justify-content: center; /* Center the title image horizontally */
+  width: 100%; /* Ensure the title container takes full width */
+}
+
+/* Title image styling */
+.title-image {
+  width: 500px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .title-image {
+    width: 150px; /* Adjust title image width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .title-image {
+    width: 120px; /* Further adjust title image width for very small screens */
+  }
 }
