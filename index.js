@@ -1,11 +1,13 @@
 import { createCharacterCard } from "./components/card/card.js";
+import { createButton } from "./components/nav-button/nav-button.js";
+import { createPagination } from "./components/nav-pagination/nav-pagination.js";
+import { createSearchBar } from "./components/search-bar/search-bar.js";
 
 const cardContainer = document.querySelector('[data-js="card-container"]');
-const searchBar = document.querySelector('[data-js="search-bar"]');
-//const navigation = document.querySelector('[data-js="navigation"]');
-const prevButton = document.querySelector('[data-js="button-prev"]');
-const nextButton = document.querySelector('[data-js="button-next"]');
-const pagination = document.querySelector('[data-js="pagination"]');
+const searchBarContainer = document.querySelector(
+  '[data-js="search-bar-container"]'
+);
+const navigation = document.querySelector('[data-js="navigation"]');
 
 // States
 let maxPage = 1;
@@ -21,7 +23,7 @@ async function fetchCharacters(page = 1, query = "") {
     const data = await response.json();
 
     maxPage = data.info.pages;
-    pagination.textContent = `${page} / ${maxPage}`;
+    //pagination.textContent = `${page} / ${maxPage}`;
     // Clear the card container before appending new cards
     cardContainer.innerHTML = "";
 
@@ -36,35 +38,47 @@ async function fetchCharacters(page = 1, query = "") {
       });
       cardContainer.appendChild(cardElement);
     });
+    updatePagination();
   } catch (error) {
     console.error("Failed to fetch characters:", error);
   }
 }
 
-// Event listeners for pagination buttons - Prev. & next button - DONE!
-prevButton.addEventListener("click", () => {
+// Event handlers
+function handlePrevClick() {
   if (page > 1) {
     page--;
     fetchCharacters(page, searchQuery);
   }
-});
+}
 
-nextButton.addEventListener("click", () => {
+function handleNextClick() {
   if (page < maxPage) {
     page++;
     fetchCharacters(page, searchQuery);
   }
-});
+}
 
-// Event listener for search form submission
-searchBar.addEventListener("submit", (event) => {
-  event.preventDefault();
-  searchQuery = new FormData(searchBar).get("query");
-  page = 1; // Reset to first page for new search
+function handleSearchSubmit(query) {
+  searchQuery = query;
+  page = 1; // Reset to the first page on new search
   fetchCharacters(page, searchQuery);
-});
+}
 
-// navigation.addEventListener("submit", (Event));
+// Creating and appending components
+const prevButton = createButton("previous", handlePrevClick);
+const nextButton = createButton("next", handleNextClick);
+const pagination = createPagination(page, maxPage);
+const searchBar = createSearchBar(handleSearchSubmit);
 
-// Call the function to fetch and display the first 20 characters and more than 20!
+navigation.append(prevButton, pagination, nextButton);
+searchBarContainer.appendChild(searchBar);
+
+// Update pagination
+function updatePagination() {
+  const paginationElement = navigation.querySelector(".navigation__pagination");
+  paginationElement.textContent = `${page} / ${maxPage}`;
+}
+
+// Initial fetch
 fetchCharacters();
