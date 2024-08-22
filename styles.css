@@ -10,8 +10,8 @@
 }
 
 :root {
-  --color-primary: rgb(51, 51, 51);
-  --color-secondary: #f6f6f6;
+  --color-primary: #031919;
+  --color-secondary: #ffa07a;
   --font-family: system-ui;
 }
 
@@ -55,5 +55,32 @@ body {
 @media (max-width: 480px) {
   .title-image {
     width: 120px; /* Further adjust title image width for very small screens */
+  }
+}
+
+/* Media Queries para diseño responsivo */
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  main {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .title {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 25px;
+  }
+
+  .title {
+    font-size: 1em;
   }
 }
