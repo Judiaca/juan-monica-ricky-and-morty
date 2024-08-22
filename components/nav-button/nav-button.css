@@ -1,7 +1,39 @@
+/* Base button styling */
 .button {
-  border: none;
+  border: 2px solid #14b3ca; /* Rick and Morty Blue border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside the button */
+  color: #ffffff; /* White text color */
+  font-family: "Press Start 2P", cursive; /* Rick and Morty styled font */
+  font-size: 1em; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  background-color: #00b865; /* Green background matching the Rick and Morty theme */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
+/* Hover and active states */
 .button:hover {
-  background-color: var(--color-secondary);
+  background-color: #14b3ca; /* Switch to the blue theme on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.button:active {
+  background-color: #009c52; /* Darker green when active */
+  transform: scale(0.95); /* Slightly smaller when clicked */
+}
+
+/* Previous button specific styling */
+.button--prev {
+  background-color: #00d084; /* Primary Green background for "Previous" button */
+}
+
+/* Next button specific styling */
+.button--next {
+  background-color: #00d084; /* Primary Green background for "Next" button */
+}
+
+/* Focus styling for accessibility */
+.button:focus {
+  outline: 3px solid #f7e018; /* Yellow outline on focus to match the theme */
+  outline-offset: 2px;
 }

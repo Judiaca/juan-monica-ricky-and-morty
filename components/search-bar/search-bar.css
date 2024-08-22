@@ -1,30 +1,53 @@
+/* Search bar container styling */
 .search-bar-container {
-  width: 300px;
+  display: flex;
+  justify-content: center; /* Center the search bar container */
+  margin: 20px 0; /* Add margin for spacing */
 }
 
+/* Search bar styling */
 .search-bar {
-  padding: 10px 20px;
-  background-color: var(--color-secondary);
-  display: grid;
-  grid-template-columns: 1fr 24px;
+  display: flex;
+  border: 2px solid #00d084; /* Primary Green border */
+  border-radius: 5px;
+  background-color: #c4d45c; /* Secondary Green background */
+  padding: 5px; /* Padding inside the search bar */
 }
 
 .search-bar__input {
-  background-color: transparent;
-  border: none;
-  color: var(--color-primary);
+  border: none; /* Remove default border */
+  padding: 10px; /* Padding inside the input field */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #e0f7fa; /* Light teal for the input background */
+  color: #14b3ca; /* Accent Blue text color */
+  font-size: 1em; /* Font size for input text */
+  flex: 1; /* Allow input to take up available space */
+  font-family: "Press Start 2P", cursive; /* Apply the font */
+}
+
+.search-bar__input::placeholder {
+  color: #14b3ca; /* Accent Blue placeholder text color */
 }
 
 .search-bar__button {
-  border: none;
-  background-color: transparent;
+  background-color: #00d084; /* Primary Green button background */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Padding inside the button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-family: "Press Start 2P", cursive; /* Apply the font */
 }
 
-.search-bar__input:focus {
-  outline: none;
+.search-bar__button:hover {
+  background-color: #00b865; /* Darker green on hover */
 }
 
 .search-bar__icon {
-  width: 20px;
-  /* filter: invert(); */
+  width: 20px; /* Adjust icon size */
+  height: auto;
+}
+
+.search-bar:hover {
+  background-color: #01191d; /* Switch to the blue theme on hover */
+  transform: scale(1.15); /* Slight zoom on hover */
 }
